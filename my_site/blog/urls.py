@@ -10,6 +10,5 @@ urlpatterns = [
     #slug: checks the uls patterns
     path("posts/<slug:slug>",views.SinglePostView.as_view(),name='post-page-details'),
     path("read-later",views.ReadLaterView.as_view(),name="read-later")
-] + static(
-    settings.MEDIA_URL, document_root = settings.MEDIA_ROOT
-)
+] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT) \
+  + static(settings.STATIC_URL,document_root= settings.STATIC_ROOT)
